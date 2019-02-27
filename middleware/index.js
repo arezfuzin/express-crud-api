@@ -15,8 +15,9 @@ module.exports = {
   },
 
   authorization(req, res, next) {
-    const { role } = req.headers;
-    if (role === 'user') {
+    const { token } = req.headers;
+    const decoded = jwt.decode(token);
+    if (decoded.role === 'user') {
       next();
     } else {
       res.status(401).json({

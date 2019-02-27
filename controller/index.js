@@ -3,6 +3,7 @@ const Model = require('../model');
 
 module.exports = {
   createData(req, res) {
+    console.log(chalk.yellow('[PATH]:'), chalk.cyanBright(req.path));
     const newModel = new Model(req.body);
     newModel.save()
       .then((data) => {
@@ -20,6 +21,7 @@ module.exports = {
   },
 
   getData(req, res) {
+    console.log(chalk.yellow('[PATH]:'), chalk.cyanBright(req.path));
     Model.find()
       .then((data) => {
         if (data.length > 0) {
@@ -43,6 +45,7 @@ module.exports = {
   },
 
   getDataById(req, res) {
+    console.log(chalk.yellow('[PATH]:'), chalk.cyanBright(req.path));
     Model.findById(req.params.id)
       .then((data) => {
         res.status(200).json({
@@ -59,6 +62,7 @@ module.exports = {
   },
 
   updateData(req, res) {
+    console.log(chalk.yellow('[PATH]:'), chalk.cyanBright(req.path));
     const updateData = req.body;
     Model.updateOne({ _id: req.params.id }, updateData)
       .then(async (data) => {
@@ -86,6 +90,7 @@ module.exports = {
   },
 
   removeData(req, res) {
+    console.log(chalk.yellow('[PATH]:'), chalk.cyanBright(req.path));
     Model.findByIdAndRemove(req.params.id)
       .then((data) => {
         res.status(200).json({
