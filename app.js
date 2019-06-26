@@ -28,3 +28,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', router);
 
 app.listen(port, console.log(chalk.blue('[API]: '), chalk.green('Connected to Port !!')));
+
+module.exports = app;

@@ -4,17 +4,24 @@
   "description": "this is the tamplate for CRUD api with express",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "export NODE_ENV=test && nyc mocha --recursive --exit --timeout 60000",
+    "test2": "jest"
   },
   "author": "anugrah rezki fauzi nasution",
   "license": "MIT",
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "chalk": "^2.4.1",
     "cors": "^2.8.5",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "jest": "^24.8.0",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.3.9"
+    "mocha": "^6.1.4",
+    "mongoose": "^5.3.9",
+    "nyc": "^14.1.1"
   },
   "devDependencies": {
     "eslint": "^5.8.0",

@@ -20,7 +20,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/create', authentication, authorization, createData);
-router.get('/get', authentication, authorization, getData);
+// router.get('/get', authentication, authorization, getData);
+router.get('/get', getData);
 router.get('/get-by-id/:id', authentication, authorization, getDataById);
 router.put('/put/:id', authentication, authorization, updateData);
 router.delete('/remove/:id', authentication, authorization, removeData);
